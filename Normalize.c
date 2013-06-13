@@ -1,3 +1,6 @@
+/*Normalize takes a character array and removes leading/trailing blankspaces.  Additionally, it makes any uppercase letter
+lowercase, and collapses spaces that contain more than one space into one space.
+
 int normalize(char *buf, /* The character array containing the string to be normalized*/
               int len    /* the size of the original character array */)
 {
