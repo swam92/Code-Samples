@@ -30,7 +30,7 @@ int normalize(char *buf, /* The character array containing the string to be norm
           		read++;				               //increment the location of read
            		ctr++;            			       //increment the amount of unused characters
         		}
-      			*write =getLower((int) *read); 			//break out of loop and assign write its first character
+      		*write =getLower((int) *read); 		        	//break out of loop and assign write its first character
           	}
 
         if (isspace(buf[i-1])!=0){				        //if there are two consecutive spaces
