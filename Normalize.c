@@ -21,26 +21,26 @@ int normalize(char *buf, /* The character array containing the string to be norm
   
 	for (i=0; i<len; i++){ 						//for each element in the array
 	
-       if(isspace(*read)!=0){						//if what read is pointing to is a space
+             if(isspace(*read)!=0){					//if what read is pointing to is a space
           
        		if(write == buf){					//if nothing has been written yet
     			
-      				while(isspace(*read) != 0){		//while read is still pointing to a blank
+      			while(isspace(*read) != 0){		       //while read is still pointing to a blank
         			
           				read++;				//increment the location of read
            				ctr++;				//increment the amount of unused characters
-        			}
+        		}
       			*write =getLower((int) *read); 			//break out of loop and assign write its first character
-          		}
+          	}
 
         	if (isspace(buf[i-1])!=0){				//if there are two consecutive spaces
          
            		while (isspace(*read) != 0){			//while there is more than one consecutive space
           
             		read++;						//increment read pointer
-          	  		ctr++;					//increment the amount of unused characters
+          	  	ctr++;					       //increment the amount of unused characters
           		}
-          }
+          	}
 
           if(buf[i+1]==NULL){          					//if there is one extra trailing space
         		ctr++;						//record it to be deleted
@@ -56,9 +56,9 @@ int normalize(char *buf, /* The character array containing the string to be norm
    int temp = ctr;								
    while(temp > 0)							//for each extra space at the end
     {
-     read=NULL;								//assign each extra space null to delete them
-     temp--;
-   }
+     	read=NULL;							//assign each extra space null to delete them
+     	temp--;
+    }
 
   //print normalized array
   int k=0;
@@ -69,5 +69,5 @@ int normalize(char *buf, /* The character array containing the string to be norm
     }
   printf("\n");
 
-  return len - ctr; 							//return the size of the normalized array
+  	return len - ctr; 						//return the size of the normalized array
 }
