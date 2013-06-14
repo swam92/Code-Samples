@@ -8,7 +8,10 @@ for example, 3+4:
 
 4 is a number so it is immediately appended to postfix.  Postfix = 3 4
 
+At this point the entire string has been iterated through, but the stack is not empty.  We check to see that the item on the stack
+is not an open parenthesis.  Its not- so we pop off the stack until it is empty and append each token to postfix.
 
+postfix = 3 4 +
 
 
 */
