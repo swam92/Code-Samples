@@ -1,4 +1,17 @@
-/*converterTree uses a stack to conver to postfix notation */
+/*converterTree uses a stack to convert standard notation to postfix notation 
+
+for example, 3+4:
+
+3 is a number so it is appended to our currently empty postfix string.  Now postfix = 3
+
++ is an operator.  We check the stack and see that it is empty.  Push + onto the stack.  Postfix = 3
+
+4 is a number so it is immediately appended to postfix.  Postfix = 3 4
+
+
+
+
+*/
 
 package CSHomework.HW3;
 import java.util.Stack;
@@ -61,7 +74,7 @@ public class converterTree  {
                while(!(stack.isEmpty())){					     //while there are still tokens on stack
                	
                  if("(".equals(stack.top())){					     //stop popping after you reach an open parenthesis
-                 	
+                 								     //we do not use parenthesis in postfix so it is not appended to postfix notation
                    stack.pop();
                    break;
                    
@@ -83,15 +96,16 @@ public class converterTree  {
              }
          }
   }   
-            while(!(stack.isEmpty())){
+            while(!(stack.isEmpty())){						   //empty the remaining stack contents
             	
-      		if("(".equals(stack.top())){
+      		if("(".equals(stack.top())){					   //if the only thing left is an open parenthesis
+      										   //pop it off stack.  
       			
               		stack.pop();
               	}
               	
-      		else{
-      			
+      		else{								//append all remaining items that are 
+      										//not parenthesis to postfix  			
         	String g = stack.top();
       		stack.pop();
       		postFix = postFix + g;
