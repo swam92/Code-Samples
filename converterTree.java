@@ -1,4 +1,4 @@
-/*converterTree uses a stack in order to evaluate postfix notation*/
+/*converterTree uses a stack to conver to postfix notation */
 
 package CSHomework.HW3;
 import java.util.Stack;
@@ -46,7 +46,7 @@ public class converterTree  {
            
          else if(value=='+' || value=='-' || value=='*' || value=='/' || value=='^'){//if the token is an operator
            
-             String s2 = Character.toString(value);
+             String s2 = Character.toString(value);				     //current token is named s2
              
              if(stack.isEmpty()){						     //if there is nothing on the stack
                stack.push(s2);							     //immediately push operator
@@ -101,7 +101,9 @@ public class converterTree  {
       	}
             return postFix; 
   }
-  
+  /* This function assigns each operator a number based on order of operations rules.  The number value of each operator
+     is used to determine when to push and pop tokens off the stack */
+     
      public static int checkPrecedence(String value)
       {
        if("^".equals(value)){
